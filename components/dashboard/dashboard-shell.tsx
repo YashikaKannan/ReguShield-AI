@@ -11,6 +11,7 @@ import {
   viewDescriptions,
   viewTitles
 } from "@/components/dashboard/sidebar";
+import ExecutiveDashboard from "@/components/dashboard/executive-dashboard";
 import { TopNav } from "@/components/dashboard/top-nav";
 import { RecentActivity } from "@/components/dashboard/recent-activity";
 import { AnalysisResults } from "@/components/analysis/analysis-results";
@@ -276,27 +277,12 @@ export function DashboardShell() {
           <KpiCards items={dashboardKpis} />
 
           {activeView === "dashboard" && (
-            <>
-              <div className="grid gap-5 xl:grid-cols-[1.45fr_0.95fr]">
-                <UploadWorkflow
-                  file={uploadedFile}
-                  progress={progress}
-                  uploadState={uploadState}
-                  analysis={filteredAnalysis}
-                  onFileSelected={handleFileSelected}
-                  onReset={resetWorkflow}
-                />
-                <EvidenceValidation analysis={analysis} state={uploadState} />
-              </div>
-
-              <div className="grid gap-5 2xl:grid-cols-[1.4fr_0.8fr]">
-                <TaskTable items={filteredTasks} state={uploadState} />
-                <div className="grid gap-5">
-                  <RiskMonitoring signals={filteredRiskSignals} riskLevel={activeRiskLevel} />
-                  <RecentActivity items={filteredActivity} />
-                </div>
-              </div>
-            </>
+            <ExecutiveDashboard
+              analysis={filteredAnalysis}
+              tasks={filteredTasks}
+              riskSignals={filteredRiskSignals}
+              onNavigate={(view) => setActiveView(view as DashboardView)}
+            />
           )}
 
           {activeView === "uploads" && (
