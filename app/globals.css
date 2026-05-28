@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 218 43% 6%;
+    --foreground: 190 32% 94%;
+    --card: 218 36% 10%;
+    --card-foreground: 190 32% 94%;
+    --primary: 174 72% 48%;
+    --primary-foreground: 215 45% 8%;
+    --secondary: 222 24% 16%;
+    --secondary-foreground: 188 28% 91%;
+    --muted: 220 20% 17%;
+    --muted-foreground: 200 14% 67%;
+    --accent: 209 84% 57%;
+    --accent-foreground: 218 43% 6%;
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 197 24% 24%;
+    --input: 197 24% 24%;
+    --ring: 174 72% 48%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+    background:
+      radial-gradient(circle at 12% 12%, rgba(20, 184, 166, 0.14), transparent 30%),
+      radial-gradient(circle at 88% 8%, rgba(56, 189, 248, 0.11), transparent 28%),
+      linear-gradient(135deg, #07111f 0%, #091620 42%, #0c1724 100%);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply border border-white/10 bg-white/[0.055] shadow-glow backdrop-blur-xl;
+  }
+}
