@@ -14,6 +14,8 @@ ReguShield AI is a production-ready Next.js application that serves as a governa
 
 The application operates as a **frontend-only MVP** with mock data, making it ideal for demonstration, design validation, and pre-backend development.
 
+## Deployed link - https://regu-shield.vercel.app
+
 ## Features
 
 ### Executive Dashboard
