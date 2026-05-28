@@ -36,6 +36,9 @@ export function UploadPanel({
     const selected = files?.[0];
     if (selected) {
       onFileSelected(selected);
+      if (inputRef.current) {
+        inputRef.current.value = "";
+      }
     }
   }
 
@@ -48,7 +51,7 @@ export function UploadPanel({
             Intake RBI circulars and CERT-In advisories for AI obligation extraction.
           </CardDescription>
         </div>
-        <Button size="sm" disabled={!file || isBusy}>
+        <Button size="sm" disabled={!file || isBusy || state === "complete"}>
           {state === "processing" ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (

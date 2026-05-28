@@ -35,6 +35,13 @@ export type ActivityItem = {
   meta: string;
 };
 
+export type DashboardFilters = {
+  severity: "All" | ExtractedObligation["severity"];
+  department: string;
+  status: "All" | GeneratedMapTask["status"];
+  regulationType: "All" | "RBI" | "CERT-In";
+};
+
 export type RegulationAnalysis = {
   source: string;
   obligations: ExtractedObligation[];
@@ -46,7 +53,9 @@ export type RegulationAnalysis = {
 };
 
 export function createMockRegulationAnalysis(fileName: string): RegulationAnalysis {
-  const source = fileName.includes("CERT") ? "CERT-In Advisory" : "RBI Cyber Security Circular";
+  const source = fileName.includes("CERT")
+    ? "CERT-In Directions on Cyber Security Incident Reporting"
+    : "RBI Master Direction on Cyber Security Controls";
 
   return {
     source,
@@ -63,7 +72,7 @@ export function createMockRegulationAnalysis(fileName: string): RegulationAnalys
         ]
       },
       {
-        title: "Centralized audit logging must cover critical systems",
+        title: "Centralized audit logging must cover critical banking systems",
         deadline: "45 days",
         severity: "High",
         departments: ["SOC", "Infrastructure", "Audit"],
@@ -124,7 +133,7 @@ export function createMockRegulationAnalysis(fileName: string): RegulationAnalys
     activity: [
       {
         title: `${source} analyzed`,
-        meta: "3 obligations and 3 MAPs generated"
+        meta: "3 obligations and 3 MAPs generated for the compliance workspace"
       },
       {
         title: "Risk posture refreshed",

@@ -42,8 +42,8 @@ export const kpis = [
 export const tasks: GeneratedMapTask[] = [
   {
     id: "MAP-1042",
-    regulation: "RBI Cyber Security Framework",
-    obligation: "Quarterly vulnerability assessment for internet-facing assets",
+    regulation: "RBI Cyber Security Framework for Banks and NBFCs",
+    obligation: "Quarterly vulnerability assessment for internet-facing assets and payment gateways",
     owner: "CISO Office",
     due: "14 Jun",
     status: "In Progress",
@@ -51,8 +51,8 @@ export const tasks: GeneratedMapTask[] = [
   },
   {
     id: "MAP-1043",
-    regulation: "CERT-In Incident Reporting",
-    obligation: "Validate 6-hour reporting workflow and escalation matrix",
+    regulation: "CERT-In Directions on Incident Reporting",
+    obligation: "Validate 6-hour incident reporting workflow and escalation matrix",
     owner: "SOC Lead",
     due: "08 Jun",
     status: "Overdue",
@@ -60,8 +60,8 @@ export const tasks: GeneratedMapTask[] = [
   },
   {
     id: "MAP-1044",
-    regulation: "RBI Digital Payment Security",
-    obligation: "Reconcile MFA exceptions for privileged payment systems",
+    regulation: "RBI Master Direction on Digital Payment Security Controls",
+    obligation: "Reconcile MFA exceptions for privileged payment systems and UPI admin roles",
     owner: "IAM Team",
     due: "21 Jun",
     status: "Queued",
@@ -70,11 +70,29 @@ export const tasks: GeneratedMapTask[] = [
   {
     id: "MAP-1045",
     regulation: "RBI IT Outsourcing Directions",
-    obligation: "Collect vendor cyber resilience attestations",
+    obligation: "Collect vendor cyber resilience attestations and annual assurance letters",
     owner: "Third Party Risk",
     due: "29 Jun",
     status: "Validated",
     risk: "Low"
+  },
+  {
+    id: "MAP-1046",
+    regulation: "RBI Master Direction - Digital Lending",
+    obligation: "Confirm customer consent logs and lender disclosure timestamps",
+    owner: "Core Banking",
+    due: "05 Jul",
+    status: "In Progress",
+    risk: "High"
+  },
+  {
+    id: "MAP-1047",
+    regulation: "CERT-In Cyber Security Directions",
+    obligation: "Retain log aggregation evidence for critical banking services",
+    owner: "Security Engineering",
+    due: "01 Jul",
+    status: "Queued",
+    risk: "Medium"
   }
 ];
 
@@ -93,17 +111,27 @@ export const riskSignals: RiskSignal[] = [
 export const activity = [
   {
     title: "CERT-In advisory parsed",
-    meta: "4 obligations extracted",
+    meta: "4 obligations extracted from incident reporting update",
     icon: TrendingUp
   },
   {
     title: "Evidence accepted for MAP-1036",
-    meta: "SOC2 bridge letter validated",
+    meta: "SOC2 bridge letter validated for core banking audit",
     icon: CheckCircle2
   },
   {
     title: "RBI circular queued for review",
-    meta: "Digital lending controls",
+    meta: "Digital lending controls mapped to customer consent logs",
+    icon: FileWarning
+  },
+  {
+    title: "Vendor attestation reviewed",
+    meta: "Third-party cyber resilience evidence signed off",
+    icon: CheckCircle2
+  },
+  {
+    title: "MFA exception register refreshed",
+    meta: "Privileged access controls moved to high priority",
     icon: FileWarning
   }
 ];
